@@ -1,0 +1,43 @@
+{
+    "name": "shakurov/coinbase",
+    "description": "Laravel API wrapper for the Coinbase Commerce API",
+    "keywords": [
+        "laravel",
+        "laravel 5",
+        "coinbase",
+        "coinbase commerce"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vladimir Shakurov",
+            "email": "vladimir@shakurov.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Shakurov\\Coinbase\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Shakurov\\Coinbase\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Shakurov\\Coinbase\\CoinbaseServiceProvider"
+            ],
+            "aliases": {
+                "Coinbase": "Shakurov\\Coinbase\\Facades\\Coinbase"
+            }
+        }
+    }
+}
