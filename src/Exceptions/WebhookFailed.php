@@ -14,17 +14,17 @@ class WebhookFailed extends Exception
 
     public static function invalidSignature($signature)
     {
-        return new static("The signature `{$signature}` found in the header named `X-CC-Webhook-Signature` is invalid. Make sure that the `coinbase.share_secret` config key is set to the value you found on the OhDear dashboard. If you are caching your config try running `php artisan clear:cache` to resolve the problem.");
+        return new static("The signature `{$signature}` found in the header named `X-CC-Webhook-Signature` is invalid. Make sure that the `coinbase.webhookSecret` config key is set to the value you found on the Coinbase Commerce dashboard. If you are caching your config try running `php artisan clear:cache` to resolve the problem.");
     }
 
     public static function sharedSecretNotSet()
     {
-        return new static('The OhDear webhook signing secret is not set. Make sure that the `ohdear-webhooks.signing_secret` config key is set to the value you found on the Stripe dashboard.');
+        return new static('The Coinbase Commerce webhook shared secret is not set. Make sure that the `coinbase.webhookSecfet` config key is set to the value you found on the Coinbase Commerce dashboard.');
     }
 
     public static function missingType()
     {
-        return new static('The webhook call did not contain a type. Valid OhDear webhook calls should always contain a type.');
+        return new static('The webhook call did not contain a type. Valid Coinbase Commerce webhook calls should always contain a type.');
     }
 
     public function render($request)
