@@ -16,7 +16,7 @@ class CoinbaseServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/../config/coinbase.php' => config_path('coinbase.php'),
-        ]);
+        ], 'config');
 
         $timestamp = date('Y_m_d_His', time());
 
