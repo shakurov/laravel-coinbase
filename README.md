@@ -135,7 +135,7 @@ Coinbase Commerce will sign all requests hitting the webhook url of your app. Th
  
 Unless something goes terribly wrong, this package will always respond with a `200` to webhook requests. Sending a `200` will prevent Coinbase Commerce from resending the same event over and over again. All webhook requests with a valid signature will be logged in the `coinbase_webhook_calls` table. The table has a `payload` column where the entire payload of the incoming webhook is saved.
 
-If the signature is not valid, the request will not be logged in the `coinbase_webhook_calls` table but a `Shakurov\Coinbase\Exception\WebhookFailed` exception will be thrown.
+If the signature is not valid, the request will not be logged in the `coinbase_webhook_calls` table but a `Shakurov\Coinbase\Exceptions\WebhookFailed` exception will be thrown.
 If something goes wrong during the webhook request the thrown exception will be saved in the `exception` column. In that case the controller will send a `500` instead of `200`. 
  
 There are two ways this package enables you to handle webhook requests: you can opt to queue a job or listen to the events the package will fire.
