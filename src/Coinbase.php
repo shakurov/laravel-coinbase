@@ -85,28 +85,30 @@ class Coinbase
      *
      * @param string $method
      * @param string $uri
+     * @param null|array $query
      * @param null|array $params
      * @return array
      */
-    public function makeRequest(string $method, string $uri, array $params = [])
+    public function makeRequest(string $method, string $uri, array $query = [], array $params = [])
     {
         try {
-            $response = $this->client->request($method, $uri, ['body' => json_encode($params)]);
+            $response = $this->client->request($method, $uri, ['query' => $query, 'body' => json_encode($params)]);
 
             return json_decode((string) $response->getBody(), true);
         } catch(GuzzleException $e) {
-            dd($e->getMessage());
+            //dd($e->getMessage());
         }
     }
 
     /**
      * Lists all charges.
      *
+     * @param null|array $query
      * @return array
      */
-    public function getCharges()
+    public function getCharges(array $query = [])
     {
-        return $this->makeRequest('get', 'charges');
+        return $this->makeRequest('get', 'charges', $query);
     }
 
     /**
@@ -134,11 +136,12 @@ class Coinbase
     /**
      * Lists all checkouts.
      *
+     * @param null|array $query
      * @return array
      */
-    public function getCheckouts()
+    public function getCheckouts(array $query = [])
     {
-        return $this->makeRequest('get', 'checkouts');
+        return $this->makeRequest('get', 'checkouts', $query);
     }
 
     /**
@@ -189,11 +192,12 @@ class Coinbase
     /**
      * Lists all events.
      *
+     * @param null|array $query
      * @return array
      */
-    public function getEvents()
+    public function getEvents(array $query = [])
     {
-        return $this->makeRequest('get', 'events');
+        return $this->makeRequest('get', 'events', $query);
     }
 
     /**
