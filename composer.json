@@ -1,6 +1,6 @@
 {
     "name": "shakurov/coinbase",
-    "description": "Laravel API wrapper for the Coinbase Commerce API",
+    "description": "Laravel wrapper for the Coinbase Commerce API",
     "keywords": [
         "laravel",
         "laravel 5",
@@ -18,7 +18,8 @@
         "guzzlehttp/guzzle": "~6.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "~6.0"
+        "phpunit/phpunit": "~6.0",
+        "orchestra/testbench": "~3.0"
     },
     "autoload": {
         "psr-4": {
@@ -29,6 +30,9 @@
         "psr-4": {
             "Shakurov\\Coinbase\\Tests\\": "tests/"
         }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
     },
     "extra": {
         "laravel": {
