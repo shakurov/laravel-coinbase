@@ -20,7 +20,7 @@ class WebhookFailed extends Exception
 
     public static function sharedSecretNotSet()
     {
-        return new static('The Coinbase Commerce webhook shared secret is not set. Make sure that the `coinbase.webhookSecfet` config key is set to the value you found on the Coinbase Commerce dashboard.');
+        return new static('The Coinbase Commerce webhook shared secret is not set. Make sure that the `coinbase.webhookSecret` config key is set to the value you found on the Coinbase Commerce dashboard.');
     }
     
     public static function jobClassDoesNotExist(string $jobClass, CoinbaseWebhookCall $webhookCall)
