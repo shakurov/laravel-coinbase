@@ -1,4 +1,4 @@
-# Laravel API wrapper for the Coinbase Commerce
+# Laravel wrapper for the Coinbase Commerce API
 
 ## Installation
 
