@@ -190,7 +190,7 @@ After having created your job you must register it at the `jobs` array in the `c
 
 ### Handling webhook requests using events
 
-Instead of queueing jobs to perform some work when a webhook request comes in, you can opt to listen to the events this package will fire. Whenever a valid request hits your app, the package will fire a `coinbase-webhooks::<name-of-the-event>` event.
+Instead of queueing jobs to perform some work when a webhook request comes in, you can opt to listen to the events this package will fire. Whenever a valid request hits your app, the package will fire a `coinbase::<name-of-the-event>` event.
 
 The payload of the events will be the instance of `CoinbaseWebhookCall` that was created for the incoming request. 
 
