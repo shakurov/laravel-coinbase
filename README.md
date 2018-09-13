@@ -27,6 +27,7 @@ return [
         // 'charge:created' => \App\Jobs\CoinbaseWebhooks\HandleCreatedCharge::class,
         // 'charge:confirmed' => \App\Jobs\CoinbaseWebhooks\HandleConfirmedCharge::class,
         // 'charge:failed' => \App\Jobs\CoinbaseWebhooks\HandleFailedCharge::class,
+        // 'charge:delayed' => \App\Jobs\CoinbaseWebhooks\HandleDelayedCharge::class,
     ],
     'webhookModel' => Shakurov\Coinbase\Models\CoinbaseWebhookCall::class,
 ];
