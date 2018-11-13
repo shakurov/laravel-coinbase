@@ -6,6 +6,7 @@
 <!-- Please enter exact version numbers, not just "latest" etc.! -->
 - Operating system:
 - PHP version:
+- Laravel version:
 - Laravel Coinbase Commerce wrapper version:
 
 ### Expected behaviour
