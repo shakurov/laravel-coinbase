@@ -4,6 +4,7 @@ namespace Shakurov\Coinbase;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
+use Illuminate\Support\Facades\Log;
 
 class Coinbase
 {
@@ -96,7 +97,7 @@ class Coinbase
 
             return json_decode((string) $response->getBody(), true);
         } catch(GuzzleException $e) {
-            //dd($e->getMessage());
+            Log::error($e->getMessage());
         }
     }
 
