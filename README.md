@@ -29,6 +29,7 @@ return [
         // 'charge:failed' => \App\Jobs\CoinbaseWebhooks\HandleFailedCharge::class,
         // 'charge:delayed' => \App\Jobs\CoinbaseWebhooks\HandleDelayedCharge::class,
         // 'charge:pending' => \App\Jobs\CoinbaseWebhooks\HandlePendingCharge::class,
+        // 'charge:resolved' => \App\Jobs\CoinbaseWebhooks\HandleResolvedCharge::class,
     ],
     'webhookModel' => Shakurov\Coinbase\Models\CoinbaseWebhookCall::class,
 ];
