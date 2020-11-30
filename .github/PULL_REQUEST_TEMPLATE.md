@@ -1,16 +1,14 @@
+<!-- You can erase any parts of this template not applicable to your Pull Request. -->
+
 Description of PR that completes issue here...
 
 ## Changes
 
 - Description of changes
 
-## Screenshots
-
-(prefer animated gif)
-
 ## Checklist
 
-- [ ] Requires dependency update?
-- [ ] Automated tests
+- [ ] Docs are complying/updated
+- [ ] Tests are passing
 
 Closes [TICKET-14](https://linktoticket.com/ticket-number-14)
