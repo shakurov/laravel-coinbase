@@ -11,74 +11,26 @@ class Coinbase
     /**
      * @const string
      */
-    const BASE_URI = 'https://api.commerce.coinbase.com';
+    private const BASE_URI = 'https://api.commerce.coinbase.com';
 
     /**
      * @var Client
      */
     private $client;
 
-    /**
-     * @var string
-     */
-    private $apiKey;
-
-    /**
-     * @var string
-     */
-    private $apiVersion;
-
     public function __construct()
     {
-        $this->apiKey = config('coinbase.apiKey');
-        $this->apiVersion = config('coinbase.apiVersion');
+        $apiKey = config('coinbase.apiKey');
+        $apiVersion = config('coinbase.apiVersion');
 
         $this->client = new Client([
-            'base_uri' => self::BASE_URI,
+            'base_uri' => Coinbase::BASE_URI,
             'headers' => [
                 'Content-Type' => 'application/json',
-                'X-CC-Api-Key' => $this->apiKey,
-                'X-CC-Version' => $this->apiVersion,
+                'X-CC-Api-Key' => $apiKey,
+                'X-CC-Version' => $apiVersion,
             ],
         ]);
-    }
-
-    /**
-     * @return string
-     */
-    public function getApiKey()
-    {
-        return $this->apiKey;
-    }
-
-    /**
-     * @param string $apiKey
-     * @return Coinbase
-     */
-    public function setApiKey($apiKey)
-    {
-        $this->apiKey = $apiKey;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getApiVersion()
-    {
-        return $this->apiVersion;
-    }
-
-    /**
-     * @param string $apiVersion
-     * @return Coinbase
-     */
-    public function setApiVersion($apiVersion)
-    {
-        $this->apiVersion = $apiVersion;
-
-        return $this;
     }
 
     /**
@@ -90,7 +42,7 @@ class Coinbase
      * @param null|array $params
      * @return array
      */
-    public function makeRequest(string $method, string $uri, array $query = [], array $params = [])
+    private function makeRequest(string $method, string $uri, array $query = [], array $params = [])
     {
         try {
             $response = $this->client->request($method, $uri, ['query' => $query, 'body' => json_encode($params)]);
@@ -124,14 +76,40 @@ class Coinbase
     }
 
     /**
-     * Retrieves an existing charge.
+     * Retrieves an existing charge by supplying its id or 8 character short-code.
      *
-     * @param  string  $chargeId
+     * @param  string  $chargeId  Id or short-code for a previously created charge
      * @return array
      */
     public function getCharge($chargeId)
     {
         return $this->makeRequest('get', "charges/{$chargeId}");
+    }
+
+    /**
+     * Cancels an existing charge by supplying its id or 8 character short-code.
+     *
+     * <b>Note:</b> Only new charges can be successfully canceled.
+     *
+     * @param  string  $chargeId  Id or short-code for a previously created charge
+     * @return array
+     */
+    public function cancelCharge($chargeId)
+    {
+        return $this->makeRequest('post', "charges/{$chargeId}/cancel");
+    }
+
+    /**
+     * Resolves an existing, unresolved charge by supplying its id or 8 character short-code.
+     *
+     * <b>Note:</b> Only unresolved charges can be successfully resolved.
+     *
+     * @param  string  $chargeId  Id or short-code for a previously created charge
+     * @return array
+     */
+    public function resolveCharge($chargeId)
+    {
+        return $this->makeRequest('post', "charges/{$chargeId}/resolve");
     }
 
     /**
@@ -188,6 +166,65 @@ class Coinbase
     public function deleteCheckout($checkoutId)
     {
         return $this->makeRequest('delete', "checkouts/{$checkoutId}");
+    }
+
+    /**
+     * Lists all invoices.
+     *
+     * @param null|array $query
+     * @return array
+     */
+    public function getInvoices(array $query = [])
+    {
+        return $this->makeRequest('get', 'invoices', $query);
+    }
+
+    /**
+     * Creates a new invoice.
+     *
+     * @param  array  $params
+     * @return array
+     */
+    public function createInvoice(array $params = [])
+    {
+        return $this->makeRequest('post', 'invoices', $params);
+    }
+
+    /**
+     * Retrieves an existing invoice by supplying its id or 8 character short-code.
+     *
+     * @param  string  $invoiceId Id or short-code for a previously created invoice
+     * @return array
+     */
+    public function getInvoice($invoiceId)
+    {
+        return $this->makeRequest('get', "invoices/{$invoiceId}");
+    }
+
+    /**
+     * Voids an existing invoice by supplying its id or 8 character short-code.
+     *
+     * <b>Note:</b> Only invoices with OPEN or VIEWED status can be voided.
+     *
+     * @param  string  $invoiceId Id or short-code for a previously created invoice
+     * @return array
+     */
+    public function voidInvoice($invoiceId)
+    {
+        return $this->makeRequest('post', "invoices/{$invoiceId}/void}");
+    }
+
+    /**
+     * Resolves an existing, unresolved invoice by supplying its id or 8 character short-code.
+     *
+     * <b>Note:</b> Only invoices with an unresolved charge can be successfully resolved.
+     *
+     * @param  string  $invoiceId Id or short-code for a previously created invoice
+     * @return array
+     */
+    public function resolveInvoice($invoiceId)
+    {
+        return $this->makeRequest('post', "invoices/{$invoiceId}/resolve}");
     }
 
     /**
