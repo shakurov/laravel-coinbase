@@ -153,7 +153,7 @@ class Coinbase
      */
     public function createCheckout(array $params = [])
     {
-        return $this->makeRequest('post', 'checkouts', $params);
+        return $this->makeRequest('post', 'checkouts', [], $params);
     }
 
     /**
@@ -176,7 +176,7 @@ class Coinbase
      */
     public function updateCheckout($checkoutId, array $params = [])
     {
-        return $this->makeRequest('put', "checkouts/{$checkoutId}", $params);
+        return $this->makeRequest('put', "checkouts/{$checkoutId}", [], $params);
     }
 
     /**
