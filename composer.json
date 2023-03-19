@@ -1,5 +1,5 @@
 {
-    "name": "shakurov/coinbase",
+    "name": "azcpavel/laravel-coinbase",
     "description": "Laravel wrapper for the Coinbase Commerce API",
     "keywords": [
         "laravel",
