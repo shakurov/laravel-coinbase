@@ -5,7 +5,8 @@
 You can install the package via composer:
 
 ```bash
-composer require shakurov/coinbase
+composer require azcpavel/laravel-coinbase
+
 ```
 
 The service provider will automatically register itself.
