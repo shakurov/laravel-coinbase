@@ -83,6 +83,11 @@ Cancel a charge:
 $charge = Coinbase::cancelCharge($chargeId);
 ```
 
+Resolve a charge:
+```php
+$charge = Coinbase::resolveCharge($chargeId);
+```
+
 ### Checkouts
 
 List checkouts:
@@ -122,6 +127,47 @@ $checkout = Coinbase::updateCheckout($checkoutId, [
         'name',
     ],
 ]);
+```
+
+Delete a checkout:
+```php
+$checkout = Coinbase::deleteCheckout($checkoutId);
+```
+
+### Invoices
+
+List invoices:
+```php
+$invoices = Coinbase::getInvoices();
+```
+
+Create an invoice:
+```php
+$invoice = Coinbase::createInvoice([
+    'business_name' => 'Business Name',
+    'customer_email' => 'customer@example.com',
+    'customer_name' => 'Customer Name',
+    'local_price' => [
+        'amount' => 100,
+        'currency' => 'USD',
+    ],
+    'memo' => 'A memo/description for the invoice',
+]);
+```
+
+Show an invoice:
+```php
+$invoice = Coinbase::getInvoice($invoiceId);
+```
+
+Void an invoice:
+```php
+$invoice = Coinbase::voidInvoice($invoiceId);
+```
+
+Resolve an invoice:
+```php
+$invoice = Coinbase::resolveInvoice($invoiceId);
 ```
 
 ### Events
