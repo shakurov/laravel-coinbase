@@ -138,7 +138,7 @@ $event = Coinbase::getEvent($eventId);
 
 ### Webhooks
 
-Coinbase Commerce will send out webhooks for several event types. You can find the [full list of events types](https://commerce.coinbase.com/docs/api/#webhooks) in the Coinbase Commerce documentation.
+Coinbase Commerce will send out webhooks for several event types. You can find the [full list of events types](https://docs.cloud.coinbase.com/commerce/docs/webhooks-events#events) in the Coinbase Commerce documentation.
 
 Coinbase Commerce will sign all requests hitting the webhook url of your app. This package will automatically verify if the signature is valid. If it is not, the request was probably not sent by Coinbase Commerce.
  
