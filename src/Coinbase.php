@@ -113,7 +113,6 @@ class Coinbase
     }
 
     /**
-
      * Lists all checkouts.
      *
      * @param null|array $query
