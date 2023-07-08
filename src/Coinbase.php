@@ -135,12 +135,12 @@ class Coinbase
     }
 
     /**
-     * Deletes an existing charge.
+     * Cancel an existing charge.
      *
      * @param  string  $chargeId
      * @return array
      */
-    public function deleteCharge($chargeId)
+    public function cancelCharge($chargeId)
     {
         return $this->makeRequest('post', "charges/{$chargeId}/cancel");
     }
