@@ -78,6 +78,11 @@ Show a charge:
 $charge = Coinbase::getCharge($chargeId);
 ```
 
+Cancel a charge:
+```php
+$charge = Coinbase::cancelCharge($chargeId);
+```
+
 ### Checkouts
 
 List checkouts:
