@@ -142,7 +142,7 @@ class Coinbase
      */
     public function deleteCharge($chargeId)
     {
-        return $this->makeRequest('delete', "charges/{$chargeId}/cancel");
+        return $this->makeRequest('post', "charges/{$chargeId}/cancel");
     }
 
     /**
