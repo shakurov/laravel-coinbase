@@ -14,8 +14,17 @@ Contributions are **welcome** and will be fully **credited**. We accept contribu
 
 ## Running Tests
 
+First, you need to configure the environment variables. Copy the default phpunit config (`phpunit.xml.dist`) into "gitignored" `phpunit.xml` to avoid committing sensitive data:
+
 ```bash
-$ phpunit
+$ cp phpunit.xml.dist phpunit.xml
+```
+
+Edit `phpunit.xml` file, fill the `COINBASE_API_KEY` and `COINBASE_WEBHOOK_SECRET` env variables according to the data from your Coinbase Commerce account.
+
+Now run phpunit:
+```bash
+$ composer run-script test
 ```
 
 

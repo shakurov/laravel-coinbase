@@ -11,4 +11,4 @@ Description of PR that completes issue here...
 - [ ] Docs are complying/updated
 - [ ] Tests are passing
 
-Closes [TICKET-14](https://linktoticket.com/ticket-number-14)
+Closes [TICKET-x](https://linktoticket.com/ticket-number-x)
