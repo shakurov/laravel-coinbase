@@ -135,6 +135,17 @@ class Coinbase
     }
 
     /**
+     * Cancel an existing charge.
+     *
+     * @param  string  $chargeId
+     * @return array
+     */
+    public function cancelCharge($chargeId)
+    {
+        return $this->makeRequest('post', "charges/{$chargeId}/cancel");
+    }
+
+    /**
      * Lists all checkouts.
      *
      * @param null|array $query
