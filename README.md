@@ -236,7 +236,7 @@ class ChargeCreatedListener implements ShouldQueue
 
 We highly recommend that you make the event listener queueable, as this will minimize the response time of the webhook requests. This allows you to handle more Coinbase Commerce webhook requests and avoid timeouts.
 
-The above example is only one way to handle events in Laravel. To learn the other options, read [the Laravel documentation on handling events](https://laravel.com/docs/5.6/events). 
+The above example is only one way to handle events in Laravel. To learn the other options, read [the Laravel documentation on handling events](https://laravel.com/docs/10.x/events). 
 
 ## Advanced usage
 
