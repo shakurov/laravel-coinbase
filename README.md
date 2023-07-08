@@ -90,6 +90,7 @@ Create a checkout:
 $checkout = Coinbase::createCheckout([
     'name' => 'Name',
     'description' => 'Description',
+    'requested_info' => [],
     'local_price' => [
         'amount' => 100,
         'currency' => 'USD',
