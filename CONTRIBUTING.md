@@ -15,7 +15,7 @@ Contributions are **welcome** and will be fully **credited**. We accept contribu
 ## Running Tests
 
 ```bash
-$ phpunit
+$  composer test tests/Http/Middleware/VerifySignatureTest.php
 ```
 
 

@@ -8,7 +8,7 @@ use Shakurov\Coinbase\Http\Middleware\VerifySignature;
 
 class VerifySignatureTest extends TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
