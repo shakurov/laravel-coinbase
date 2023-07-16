@@ -14,7 +14,7 @@ class WebhookController extends Controller
         $this->middleware(VerifySignature::class);
     }
 
-    public function __invoke(Request $request)
+    public function __invoke(Request $request): void
     {
         $payload = $request->input();
 

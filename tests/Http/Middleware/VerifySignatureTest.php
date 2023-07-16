@@ -20,7 +20,7 @@ class VerifySignatureTest extends TestCase
     }
 
     /** @test */
-    public function it_will_succeed_when_the_request_has_a_valid_signature()
+    public function it_will_succeed_when_the_request_has_a_valid_signature(): void
     {
         $payload = ['event' => ['type' => 'charge:created']];
 
@@ -36,7 +36,7 @@ class VerifySignatureTest extends TestCase
     }
 
     /** @test */
-    public function it_will_fail_when_the_signature_header_is_not_set()
+    public function it_will_fail_when_the_signature_header_is_not_set(): void
     {
         $response = $this->postJson(
             'coinbase-webhook',
@@ -51,7 +51,7 @@ class VerifySignatureTest extends TestCase
     }
 
     /** @test */
-    public function it_will_fail_when_the_signature_is_invalid()
+    public function it_will_fail_when_the_signature_is_invalid(): void
     {
         $response = $this->postJson(
             'coinbase-webhook',

@@ -16,7 +16,7 @@ class CoinbaseWebhookCall extends Model
         'exception' => 'array',
     ];
 
-    public function process()
+    public function process(): void
     {
         $this->clearException();
 
@@ -39,7 +39,7 @@ class CoinbaseWebhookCall extends Model
         dispatch(new $jobClass($this));
     }
 
-    public function saveException(Exception $exception)
+    public function saveException(Exception $exception): static
     {
         $this->exception = [
             'code' => $exception->getCode(),
@@ -59,7 +59,7 @@ class CoinbaseWebhookCall extends Model
         return config("coinbase.webhookJobs.{$jobConfigKey}", '');
     }
 
-    protected function clearException()
+    protected function clearException(): static
     {
         $this->exception = null;
 

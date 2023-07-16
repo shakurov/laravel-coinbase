@@ -9,10 +9,8 @@ class CoinbaseServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
-     *
-     * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         $this->publishes([
             __DIR__.'/../config/coinbase.php' => config_path('coinbase.php'),
@@ -29,10 +27,8 @@ class CoinbaseServiceProvider extends ServiceProvider
 
     /**
      * Register the application services.
-     *
-     * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->mergeConfigFrom(
             __DIR__.'/../config/coinbase.php', 'coinbase'
