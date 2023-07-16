@@ -18,7 +18,7 @@ class CoinbaseServiceProvider extends ServiceProvider
             __DIR__.'/../config/coinbase.php' => config_path('coinbase.php'),
         ], 'config');
 
-        $timestamp = date('Y_m_d_His', time());
+        $timestamp = '2018_06_01_215631';
 
         $this->publishes([
             __DIR__.'/../database/migrations/create_coinbase_webhook_calls_table.php.stub' => database_path("migrations/{$timestamp}_create_coinbase_webhook_calls_table.php"),
