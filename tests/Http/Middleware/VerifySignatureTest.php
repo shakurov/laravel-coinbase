@@ -3,9 +3,11 @@
 namespace Shakurov\Coinbase\Tests\Http\Middleware;
 
 use Illuminate\Support\Facades\Route;
+use PHPUnit\Framework\Attributes\CoversClass;
 use Shakurov\Coinbase\Tests\TestCase;
 use Shakurov\Coinbase\Http\Middleware\VerifySignature;
 
+#[CoversClass(VerifySignature::class)]
 class VerifySignatureTest extends TestCase
 {
     public function setUp(): void
