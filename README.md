@@ -222,7 +222,7 @@ class HandleCreatedCharge implements ShouldQueue
         $this->webhookCall = $webhookCall;
     }
 
-    public function handle()
+    public function handle(): void
     {
         // do your work here
         
@@ -276,7 +276,7 @@ use Shakurov\Coinbase\Models\CoinbaseWebhookCall;
 
 class ChargeCreatedListener implements ShouldQueue
 {
-    public function handle(CoinbaseWebhookCall $webhookCall)
+    public function handle(CoinbaseWebhookCall $webhookCall): void
     {
         // do your work here
 
@@ -312,7 +312,7 @@ use Shakurov\Coinbase\Models\CoinbaseWebhookCall;
 
 class MyCustomWebhookCall extends CoinbaseWebhookCall
 {
-    public function process()
+    public function process(): void
     {
         // do some custom stuff beforehand
         
