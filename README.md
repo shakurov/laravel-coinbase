@@ -213,14 +213,10 @@ use Shakurov\Coinbase\Models\CoinbaseWebhookCall;
 class HandleCreatedCharge implements ShouldQueue
 {
     use InteractsWithQueue, Queueable, SerializesModels;
-    
-    /** @var \Shakurov\Coinbase\Models\CoinbaseWebhookCall */
-    public $webhookCall;
 
-    public function __construct(CoinbaseWebhookCall $webhookCall)
-    {
-        $this->webhookCall = $webhookCall;
-    }
+    public function __construct(
+        CoinbaseWebhookCall $webhookCall,
+    ) {}
 
     public function handle(): void
     {
