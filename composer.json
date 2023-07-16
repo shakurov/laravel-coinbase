@@ -33,7 +33,7 @@
         }
     },
     "scripts": {
-        "test": "vendor/bin/phpunit"
+        "test": "vendor/bin/testbench package:test"
     },
     "replace": {
         "antimech/coinbase": "^v0.7.11"
