@@ -38,8 +38,8 @@ class Coinbase
      *
      * @param string $method
      * @param string $uri
-     * @param null|array $query
-     * @param null|array $params
+     * @param array $query
+     * @param array $params
      * @return array
      */
     private function makeRequest(string $method, string $uri, array $query = [], array $params = [])
@@ -56,7 +56,7 @@ class Coinbase
     /**
      * Lists all charges.
      *
-     * @param null|array $query
+     * @param array $query
      * @return array
      */
     public function getCharges(array $query = [])
