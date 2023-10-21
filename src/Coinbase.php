@@ -115,7 +115,7 @@ class Coinbase
     /**
      * Lists all checkouts.
      *
-     * @param null|array $query
+     * @param array $query
      * @return array
      */
     public function getCheckouts(array $query = [])
@@ -171,7 +171,7 @@ class Coinbase
     /**
      * Lists all invoices.
      *
-     * @param null|array $query
+     * @param array $query
      * @return array
      */
     public function getInvoices(array $query = [])
@@ -230,7 +230,7 @@ class Coinbase
     /**
      * Lists all events.
      *
-     * @param null|array $query
+     * @param array $query
      * @return array
      */
     public function getEvents(array $query = [])
