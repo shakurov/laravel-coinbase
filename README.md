@@ -1,5 +1,7 @@
 # Laravel wrapper for the Coinbase Commerce API
 
+This package is abandoned and no longer maintained. The author suggests using the [antimech/coinbase](https://github.com/antimech/laravel-coinbase) package instead.
+
 ## Installation
 
 You can install the package via composer:
